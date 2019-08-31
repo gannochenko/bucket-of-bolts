@@ -15,7 +15,7 @@ import {
     Question,
     Buttons,
     defaultTheme,
-} from './style';
+} from 'packages/ui/src/Modal/style';
 
 export class Modal extends React.Component {
     constructor(props) {

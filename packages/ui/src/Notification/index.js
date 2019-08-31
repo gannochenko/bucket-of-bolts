@@ -9,7 +9,7 @@ import {
     MessageWrap,
     Text,
     Close,
-} from './style';
+} from 'packages/ui/src/Notification/style';
 
 const isne = str => typeof str === 'string' && str.length > 0;
 const ione = arg => arg !== null && (typeof arg === 'object' || typeof arg === 'function') && Object.keys(arg).length > 0;

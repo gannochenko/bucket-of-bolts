@@ -4,7 +4,7 @@
 
 import React, { Component } from 'react';
 import { object, func, bool } from 'prop-types';
-import { defaultTheme, DropPanelContainer, Panel, PanelInner } from './style';
+import { defaultTheme, DropPanelContainer, Panel, PanelInner } from 'packages/ui/src/DropPanel/style';
 
 export class DropPanel extends Component {
     constructor(props) {
