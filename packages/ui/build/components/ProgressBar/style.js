@@ -1,54 +1,40 @@
-'use strict';
+"use strict";
 
-Object.defineProperty(exports, '__esModule', {
-    value: true,
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
 exports.Progress = exports.ProgressBarContainer = exports.defaultTheme = void 0;
 
-var _styledComponents = _interopRequireDefault(require('styled-components'));
+var _styledComponents = _interopRequireDefault(require("styled-components"));
 
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : { default: obj };
-}
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var defaultTheme = {
-    bar: {
-        color: '#966e1e',
-    },
-    color: 'transparent',
+  bar: {
+    color: '#966e1e'
+  },
+  color: 'transparent'
 };
 exports.defaultTheme = defaultTheme;
 
 var ProgressBarContainer = _styledComponents.default.div.withConfig({
-    displayName: 'style__ProgressBarContainer',
-    componentId: 'dgk1tl-0',
-})(['position:fixed;top:0;left:0;right:0;background-color:', ';'], function(
-    props,
-) {
-    return props.theme.color;
+  displayName: "style__ProgressBarContainer",
+  componentId: "dgk1tl-0"
+})(["position:fixed;top:0;left:0;right:0;background-color:", ";"], function (props) {
+  return props.theme.color;
 });
 
 exports.ProgressBarContainer = ProgressBarContainer;
 
 var Progress = _styledComponents.default.div.withConfig({
-    displayName: 'style__Progress',
-    componentId: 'dgk1tl-1',
-})(
-    [
-        'width:',
-        '%;height:',
-        ';background-color:',
-        ';transition:width 300ms ease,height 700ms ease;',
-    ],
-    function(props) {
-        return props.width || '0';
-    },
-    function(props) {
-        return !props.fading ? '0.3rem' : '0';
-    },
-    function(props) {
-        return props.theme.bar.color;
-    },
-);
+  displayName: "style__Progress",
+  componentId: "dgk1tl-1"
+})(["width:", "%;height:", ";background-color:", ";transition:width 300ms ease,height 700ms ease;"], function (props) {
+  return props.width || '0';
+}, function (props) {
+  return !props.fading ? '0.3rem' : '0';
+}, function (props) {
+  return props.theme.bar.color;
+});
 
 exports.Progress = Progress;
