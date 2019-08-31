@@ -20,6 +20,7 @@
     "author": "gannochenko.sv@gmail.com",
     "license": "MIT",
     "devDependencies": {
+        "@babel/cli": "^7.5.5",
         "@babel/core": "^7.3.4",
         "@babel/plugin-proposal-object-rest-spread": "^7.3.4",
         "@babel/preset-env": "^7.3.4",
@@ -28,6 +29,7 @@
         "babel-eslint": "^10.0.2",
         "babel-loader": "^8.0.5",
         "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+        "core-js": "^3.2.1",
         "eslint": "^6.0.1",
         "eslint-config-airbnb-base": "^13.1.0",
         "eslint-config-prettier": "^6.0.0",
@@ -37,10 +39,10 @@
         "eslint-plugin-react": "^7.13.0",
         "eslint-plugin-react-hooks": "^1.6.0",
         "jest": "^24.3.1",
-        "peer-deps-externals-webpack-plugin": "^1.0.4"
+        "peer-deps-externals-webpack-plugin": "^1.0.4",
+        "regenerator-runtime": "^0.13.3"
     },
     "dependencies": {
-        "@babel/polyfill": "^7.2.5",
         "naming-style": "^1.0.0"
     },
     "peerDependencies": {

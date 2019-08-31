@@ -18,6 +18,7 @@
     "author": "gannochenko.sv@gmail.com",
     "license": "MIT",
     "devDependencies": {
+        "@babel/cli": "^7.5.5",
         "@babel/core": "^7.4.3",
         "@babel/plugin-proposal-class-properties": "^7.4.4",
         "@babel/plugin-proposal-object-rest-spread": "^7.4.3",
@@ -37,7 +38,6 @@
         "eslint-plugin-react-hooks": "^1.6.0",
         "jest": "^24.7.1"
     },
-    "dependencies": {},
     "peerDependencies": {
         "lodash.isobject": "x.x",
         "lodash.isstring": "x.x",
