@@ -21,6 +21,7 @@
         "@babel/plugin-proposal-object-rest-spread": "^7.3.4",
         "@babel/preset-env": "^7.3.4",
         "@babel/preset-react": "^7.0.0",
+        "@babel/preset-typescript": "^7.3.3",
         "@team-griffin/install-self-peers": "^1.1.1",
         "babel-eslint": "^10.0.2",
         "babel-loader": "^8.0.5",
