@@ -5,8 +5,8 @@
     "scripts": {
         "prepare": "install-self-peers -- --ignore-scripts",
         "build": "NODE_ENV=build babel ./src --ignore src/**/*.test.js --out-dir ./build",
-        "test": "jest -c ./jest/config.unit.js --passWithNoTests",
-        "test:dev": "jest -c ./jest/config.unit.js --watch",
+        "test": "jest -c ./jest/config.js --passWithNoTests",
+        "test:dev": "jest -c ./jest/config.js --watch",
         "lint": "eslint ./src",
         "lint:fix": "eslint ./src --fix"
     },
