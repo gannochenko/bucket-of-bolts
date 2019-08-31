@@ -44,5 +44,6 @@
         "hooks": {
             "pre-commit": "pretty-quick --staged"
         }
-    }
+    },
+    "gitHead": "35f7fb927d30ee0fbce02bbc9cbdc7bec16d3ab3"
 }
