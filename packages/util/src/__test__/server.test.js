@@ -2,7 +2,7 @@
  * https://github.com/sapegin/jest-cheat-sheet
  */
 
-import { Settings } from '../server';
+import { Settings } from '../settings';
 
 describe('Settings:server', () => {
     // beforeAll(async () => {
