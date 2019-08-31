@@ -1,9 +1,8 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from 'react';
 import { object, number, func, bool } from 'prop-types';
 import { defaultTheme, ProgressBarContainer, Progress } from './style';
 
-export class ProgressBarComponent extends React.Component {
+export class ProgressBarComponent extends Component {
     constructor(props) {
         super(props);
         this.loadingBefore = false;
@@ -154,5 +153,3 @@ ProgressBarComponent.defaultProps = {
     fadeTimeout: 1000,
     maximumStepDuration: 1000,
 };
-
-export default connect(s => ({ state: s }))(ProgressBarComponent);

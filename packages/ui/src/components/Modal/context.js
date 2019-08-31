@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const Context = React.createContext();
+export const ModalContext = React.createContext();
 export const withModal = Component => {
     const WithModal = props => (
-        <Context.Consumer>
+        <ModalContext.Consumer>
             {reference => (
                 <Component
                     {...props}
@@ -18,7 +18,7 @@ export const withModal = Component => {
                     }
                 />
             )}
-        </Context.Consumer>
+        </ModalContext.Consumer>
     );
 
     const wrappedComponentName =

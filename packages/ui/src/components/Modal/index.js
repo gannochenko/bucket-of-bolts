@@ -17,7 +17,7 @@ import {
     defaultTheme,
 } from './style';
 
-class Modal extends React.Component {
+export class Modal extends React.Component {
     constructor(props) {
         super(props);
 
@@ -116,5 +116,3 @@ Modal.defaultProps = {
     theme: defaultTheme,
     children: () => {},
 };
-
-export default Modal;

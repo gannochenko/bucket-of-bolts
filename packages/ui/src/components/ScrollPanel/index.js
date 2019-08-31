@@ -5,7 +5,7 @@ import { defaultTheme, ScrollPanelContainer, Inner } from './style';
 
 const getHeight = el => el.getBoundingClientRect().height;
 
-const ScrollPanel = ({ children, theme }) => {
+export const ScrollPanel = ({ children, theme }) => {
     const inner = useRef();
     const outer = useRef();
     return (
@@ -56,5 +56,3 @@ ScrollPanel.defaultProps = {
     theme: defaultTheme,
     children: () => {},
 };
-
-export default ScrollPanel;

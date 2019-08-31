@@ -35,11 +35,8 @@
         "jest": "^24.7.1"
     },
     "peerDependencies": {
-        "lodash.isobject": "x.x",
-        "lodash.isstring": "x.x",
         "prop-types": "x.x",
         "react": "16.x",
-        "react-redux": "x.x",
         "sc-companion": "x.x",
         "styled-components": "x.x"
     },

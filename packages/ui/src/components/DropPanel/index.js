@@ -6,7 +6,7 @@ import React, { Component } from 'react';
 import { object, func, bool } from 'prop-types';
 import { defaultTheme, DropPanelContainer, Panel, PanelInner } from './style';
 
-class DropPanel extends Component {
+export class DropPanel extends Component {
     constructor(props) {
         super(props);
         this.state = {};
@@ -140,5 +140,3 @@ DropPanel.defaultProps = {
     disableEvents: false,
     open: false,
 };
-
-export default DropPanel;

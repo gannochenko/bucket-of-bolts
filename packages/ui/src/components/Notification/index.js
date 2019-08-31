@@ -1,8 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { object } from 'prop-types';
 
-import isString from 'lodash.isstring';
-import isObject from 'lodash.isobject';
 import {
     defaultTheme,
     NotificationContainer,
@@ -13,10 +11,10 @@ import {
     Close,
 } from './style';
 
-const isne = str => isString(str) && str.length > 0;
-const ione = obj => isObject(obj) && Object.keys(obj).length > 0;
+const isne = str => typeof str === 'string' && str.length > 0;
+const ione = arg => arg !== null && (typeof arg === 'object' || typeof arg === 'function') && Object.keys(arg).length > 0;
 
-class Notification extends React.Component {
+export class Notification extends Component {
     constructor(props) {
         super(props);
 
@@ -143,5 +141,3 @@ Notification.propTypes = {
 Notification.defaultProps = {
     theme: defaultTheme,
 };
-
-export default Notification;

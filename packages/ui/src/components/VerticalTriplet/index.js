@@ -9,7 +9,7 @@ import {
     Bottom,
 } from './style';
 
-const VerticalTriplet = ({ top, bottom, children }) => (
+export const VerticalTriplet = ({ top, bottom, children }) => (
     <VerticalTripletContainer>
         {!!top && <Top>{top}</Top>}
         <Middle>{children}</Middle>
@@ -30,5 +30,3 @@ VerticalTriplet.defaultProps = {
     bottom: null,
     children: object,
 };
-
-export default VerticalTriplet;
