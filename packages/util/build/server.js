@@ -1,4 +1,4 @@
-const util = require('packages/util/src/lib/etc.js');
+const util = require('packages/util/src/etc.js');
 
 const settings = require('./lib/settings/server.js');
 
