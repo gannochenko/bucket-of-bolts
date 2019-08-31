@@ -1,6 +1,6 @@
 {
     "name": "@bucket-of-bolts/util",
-    "version": "1.0.0",
+    "version": "0.0.0",
     "main": "index.js",
     "scripts": {
         "prepare": "install-self-peers -- --ignore-scripts",
