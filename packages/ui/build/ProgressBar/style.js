@@ -19,7 +19,7 @@ exports.defaultTheme = defaultTheme;
 
 var ProgressBarContainer = _styledComponents.default.div.withConfig({
   displayName: "style__ProgressBarContainer",
-  componentId: "dgk1tl-0"
+  componentId: "sc-2t8tc0-0"
 })(["position:fixed;top:0;left:0;right:0;background-color:", ";"], function (props) {
   return props.theme.color;
 });
@@ -28,7 +28,7 @@ exports.ProgressBarContainer = ProgressBarContainer;
 
 var Progress = _styledComponents.default.div.withConfig({
   displayName: "style__Progress",
-  componentId: "dgk1tl-1"
+  componentId: "sc-2t8tc0-1"
 })(["width:", "%;height:", ";background-color:", ";transition:width 300ms ease,height 700ms ease;"], function (props) {
   return props.width || '0';
 }, function (props) {

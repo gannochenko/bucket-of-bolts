@@ -40,7 +40,7 @@ var appear = (0, _styledComponents.keyframes)(["from{transform:translateY(-40px)
 
 var Overlay = _styledComponents.default.div.withConfig({
   displayName: "style__Overlay",
-  componentId: "pk5ms6-0"
+  componentId: "sc-1hkhl1p-0"
 })(["", " ", " overflow-y:auto;background-color:#1b273333;z-index:", ";", ""], function (props) {
   return (0, _scCompanion.align)(props.central ? 'center' : 'top', 'center');
 }, (0, _scCompanion.fixedCover)(), function (props) {
@@ -56,7 +56,7 @@ exports.Overlay = Overlay;
 
 var Panel = _styledComponents.default.div.withConfig({
   displayName: "style__Panel",
-  componentId: "pk5ms6-1"
+  componentId: "sc-1hkhl1p-1"
 })(["max-height:none;background-color:white;border-radius:2px;border:1px solid #868b9940;box-shadow:0 8px 10px 0 #0000000d;position:relative;min-width:10rem;", " animation:", " 200ms ease;", ""], function (props) {
   return (0, _scCompanion.media)({
     all: 'max-width: 50rem;',
@@ -72,14 +72,14 @@ exports.Panel = Panel;
 
 var PanelOffset = _styledComponents.default.div.withConfig({
   displayName: "style__PanelOffset",
-  componentId: "pk5ms6-2"
+  componentId: "sc-1hkhl1p-2"
 })(["padding:1.5rem;"]);
 
 exports.PanelOffset = PanelOffset;
 
 var Cross = _styledComponents.default.div.withConfig({
   displayName: "style__Cross",
-  componentId: "pk5ms6-3"
+  componentId: "sc-1hkhl1p-3"
 })(["", " position:absolute;top:0;right:0;cursor:pointer;", ""], (0, _scCompanion.icon)('close', '1rem', '0.5rem'), function (props) {
   return (0, _scCompanion.fgColor)(props.theme.cross.color.hout, props.theme.cross.color.hover, '200ms');
 });
@@ -88,14 +88,14 @@ exports.Cross = Cross;
 
 var Question = _styledComponents.default.div.withConfig({
   displayName: "style__Question",
-  componentId: "pk5ms6-4"
+  componentId: "sc-1hkhl1p-4"
 })(["font-size:1rem;padding-bottom:1rem;"]);
 
 exports.Question = Question;
 
 var Buttons = _styledComponents.default.div.withConfig({
   displayName: "style__Buttons",
-  componentId: "pk5ms6-5"
+  componentId: "sc-1hkhl1p-5"
 })(["", ""], (0, _scCompanion.group)(null, '0.5rem'));
 
 exports.Buttons = Buttons;

@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _DropPanel = require("./components/DropPanel");
+var _DropPanel = require("./DropPanel");
 
 Object.keys(_DropPanel).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -16,7 +16,7 @@ Object.keys(_DropPanel).forEach(function (key) {
   });
 });
 
-var _Modal = require("./components/Modal");
+var _Modal = require("./Modal");
 
 Object.keys(_Modal).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -28,7 +28,7 @@ Object.keys(_Modal).forEach(function (key) {
   });
 });
 
-var _context = require("./components/Modal/context");
+var _context = require("./Modal/context");
 
 Object.keys(_context).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -40,7 +40,7 @@ Object.keys(_context).forEach(function (key) {
   });
 });
 
-var _Notification = require("./components/Notification");
+var _Notification = require("./Notification");
 
 Object.keys(_Notification).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -52,7 +52,7 @@ Object.keys(_Notification).forEach(function (key) {
   });
 });
 
-var _context2 = require("./components/Notification/context");
+var _context2 = require("./Notification/context");
 
 Object.keys(_context2).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -64,7 +64,7 @@ Object.keys(_context2).forEach(function (key) {
   });
 });
 
-var _ProgressBar = require("./components/ProgressBar");
+var _ProgressBar = require("./ProgressBar");
 
 Object.keys(_ProgressBar).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -76,7 +76,7 @@ Object.keys(_ProgressBar).forEach(function (key) {
   });
 });
 
-var _ScrollPanel = require("./components/ScrollPanel");
+var _ScrollPanel = require("./ScrollPanel");
 
 Object.keys(_ScrollPanel).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -88,7 +88,7 @@ Object.keys(_ScrollPanel).forEach(function (key) {
   });
 });
 
-var _VerticalTriplet = require("./components/VerticalTriplet");
+var _VerticalTriplet = require("./VerticalTriplet");
 
 Object.keys(_VerticalTriplet).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;

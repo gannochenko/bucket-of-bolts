@@ -14,14 +14,14 @@ exports.defaultTheme = defaultTheme;
 
 var ScrollPanelContainer = _styledComponents.default.div.withConfig({
   displayName: "style__ScrollPanelContainer",
-  componentId: "sc-19tinty-0"
+  componentId: "zhb0a7-0"
 })([""]);
 
 exports.ScrollPanelContainer = ScrollPanelContainer;
 
 var Inner = _styledComponents.default.div.withConfig({
   displayName: "style__Inner",
-  componentId: "sc-19tinty-1"
+  componentId: "zhb0a7-1"
 })([""]);
 
 exports.Inner = Inner;
