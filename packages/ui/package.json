@@ -1,6 +1,6 @@
 {
     "name": "@bucket-of-bolts/ui",
-    "version": "1.0.0",
+    "version": "0.0.0",
     "main": "index.js",
     "scripts": {
         "prepare": "install-self-peers -- --ignore-scripts",
@@ -44,6 +44,9 @@
         "hooks": {
             "pre-commit": "pretty-quick --staged"
         }
+    },
+    "publishConfig": {
+        "access": "public"
     },
     "gitHead": "35f7fb927d30ee0fbce02bbc9cbdc7bec16d3ab3"
 }

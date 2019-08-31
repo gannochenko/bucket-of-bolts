@@ -1,6 +1,6 @@
 {
     "name": "@bucket-of-bolts/util",
-    "version": "1.0.0",
+    "version": "0.0.0",
     "main": "index.js",
     "scripts": {
         "prepare": "install-self-peers -- --ignore-scripts",
@@ -41,6 +41,9 @@
     },
     "dependencies": {
         "naming-style": "^1.0.0"
+    },
+    "publishConfig": {
+        "access": "public"
     },
     "gitHead": "304683477d9979fd15d11a81c01d3e5caef3b229"
 }
