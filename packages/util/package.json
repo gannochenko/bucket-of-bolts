@@ -10,9 +10,6 @@
         "lint": "eslint ./src",
         "lint:fix": "eslint ./src --fix"
     },
-    "browser": {
-        "./settings.js": "./settings.client.js"
-    },
     "keywords": [],
     "author": "gannochenko.sv@gmail.com",
     "license": "MIT",
