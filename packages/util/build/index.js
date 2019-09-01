@@ -27,3 +27,15 @@ Object.keys(_etc).forEach(function (key) {
     }
   });
 });
+
+var _settings = require("./settings");
+
+Object.keys(_settings).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _settings[key];
+    }
+  });
+});

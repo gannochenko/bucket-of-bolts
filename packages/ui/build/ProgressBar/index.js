@@ -3,13 +3,13 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.ProgressBarComponent = void 0;
+exports.ProgressBar = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
 var _propTypes = require("prop-types");
 
-var _style = require("packages/ui/src/ProgressBar/style");
+var _style = require("style");
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
@@ -31,17 +31,17 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-var ProgressBarComponent =
+var ProgressBar =
 /*#__PURE__*/
 function (_Component) {
-  _inherits(ProgressBarComponent, _Component);
+  _inherits(ProgressBar, _Component);
 
-  function ProgressBarComponent(props) {
+  function ProgressBar(props) {
     var _this;
 
-    _classCallCheck(this, ProgressBarComponent);
+    _classCallCheck(this, ProgressBar);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(ProgressBarComponent).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ProgressBar).call(this, props));
     _this.loadingBefore = false;
     _this.startTimer = null;
     _this.timer = null;
@@ -56,7 +56,7 @@ function (_Component) {
     return _this;
   }
 
-  _createClass(ProgressBarComponent, [{
+  _createClass(ProgressBar, [{
     key: "componentDidUpdate",
     value: function componentDidUpdate() {
       var _this2 = this;
@@ -180,11 +180,11 @@ function (_Component) {
     }
   }]);
 
-  return ProgressBarComponent;
+  return ProgressBar;
 }(_react.Component);
 
-exports.ProgressBarComponent = ProgressBarComponent;
-ProgressBarComponent.propTypes = {
+exports.ProgressBar = ProgressBar;
+ProgressBar.propTypes = {
   theme: _propTypes.object,
   children: _propTypes.func,
   stepCount: _propTypes.number,
@@ -194,7 +194,7 @@ ProgressBarComponent.propTypes = {
   fadeTimeout: _propTypes.number,
   maximumStepDuration: _propTypes.number
 };
-ProgressBarComponent.defaultProps = {
+ProgressBar.defaultProps = {
   theme: _style.defaultTheme,
   children: null,
   stepCount: 15,
