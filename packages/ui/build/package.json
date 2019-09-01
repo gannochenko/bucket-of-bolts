@@ -45,5 +45,8 @@
             "pre-commit": "pretty-quick --staged"
         }
     },
+    "publishConfig": {
+        "access": "public"
+    },
     "gitHead": "35f7fb927d30ee0fbce02bbc9cbdc7bec16d3ab3"
 }
