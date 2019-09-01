@@ -6,7 +6,8 @@
     "scripts": {
         "build": "lerna run build --npm-client=yarn",
         "publish": "lerna publish --contents build --npm-client=yarn",
-        "bootstrap": "lerna bootstrap --npm-client=yarn"
+        "bootstrap": "lerna bootstrap --npm-client=yarn",
+        "release": "yarn run build; yarn run publish;"
     },
     "keywords": [],
     "author": "",
