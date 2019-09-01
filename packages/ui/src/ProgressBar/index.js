@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { object, number, func, bool } from 'prop-types';
-import { defaultTheme, ProgressBarContainer, Progress } from 'style';
+import { defaultTheme, ProgressBarContainer, Progress } from './style';
 
 export class ProgressBar extends Component {
     constructor(props) {

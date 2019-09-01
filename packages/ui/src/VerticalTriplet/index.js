@@ -7,7 +7,7 @@ import {
     Top,
     Middle,
     Bottom,
-} from 'style';
+} from './style';
 
 export const VerticalTriplet = ({ top, bottom, children }) => (
     <VerticalTripletContainer>

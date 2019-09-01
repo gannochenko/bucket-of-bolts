@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { object, func } from 'prop-types';
 
-import { defaultTheme, ScrollPanelContainer, Inner } from 'style';
+import { defaultTheme, ScrollPanelContainer, Inner } from './style';
 
 const getHeight = el => el.getBoundingClientRect().height;
 

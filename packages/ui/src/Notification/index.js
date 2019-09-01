@@ -9,7 +9,7 @@ import {
     MessageWrap,
     Text,
     Close,
-} from 'style';
+} from './style';
 
 const isne = str => typeof str === 'string' && str.length > 0;
 const ione = arg =>

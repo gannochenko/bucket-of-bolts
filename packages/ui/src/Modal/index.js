@@ -15,7 +15,7 @@ import {
     Question,
     Buttons,
     defaultTheme,
-} from 'style';
+} from './style';
 
 export class Modal extends Component {
     constructor(props) {
