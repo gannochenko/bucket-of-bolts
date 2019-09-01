@@ -5,7 +5,7 @@
  * * close by escape
  */
 
-import React from 'react';
+import React, { Component } from 'react';
 import { bool, func, object } from 'prop-types';
 import {
     Overlay,
@@ -15,9 +15,9 @@ import {
     Question,
     Buttons,
     defaultTheme,
-} from 'packages/ui/src/Modal/style';
+} from 'style';
 
-export class Modal extends React.Component {
+export class Modal extends Component {
     constructor(props) {
         super(props);
 

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { object, number, func, bool } from 'prop-types';
-import { defaultTheme, ProgressBarContainer, Progress } from 'packages/ui/src/ProgressBar/style';
+import { defaultTheme, ProgressBarContainer, Progress } from 'style';
 
-export class ProgressBarComponent extends Component {
+export class ProgressBar extends Component {
     constructor(props) {
         super(props);
         this.loadingBefore = false;
@@ -132,7 +132,7 @@ export class ProgressBarComponent extends Component {
     }
 }
 
-ProgressBarComponent.propTypes = {
+ProgressBar.propTypes = {
     theme: object,
     children: func,
     stepCount: number,
@@ -143,7 +143,7 @@ ProgressBarComponent.propTypes = {
     maximumStepDuration: number,
 };
 
-ProgressBarComponent.defaultProps = {
+ProgressBar.defaultProps = {
     theme: defaultTheme,
     children: null,
     stepCount: 15,
