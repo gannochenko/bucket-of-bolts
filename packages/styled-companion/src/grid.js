@@ -42,8 +42,8 @@ export const grid = (config = {}, theme = {}) => {
     const guttersW = theme.guttersW || theme.guttersX || theme.gutters;
 
     if (guttersH || guttersW) {
-        if (guttersW && 'all' in guttersW) {
-            const gutter = guttersW.all;
+        if (guttersW && 'index.ts' in guttersW) {
+            const gutter = guttersW.index;
             const gutterHalf = op(gutter, toHalf);
             const gutterHalfNeg = op(gutterHalf, negate);
             cssSelf += `
@@ -55,8 +55,8 @@ export const grid = (config = {}, theme = {}) => {
                 padding-right: ${gutterHalf};
             `;
         }
-        if (guttersH && 'all' in guttersH) {
-            const gutter = guttersH.all;
+        if (guttersH && 'index.ts' in guttersH) {
+            const gutter = guttersH.index;
             const gutterNeg = op(gutter, negate);
             cssSelf += `
                 margin-bottom: ${gutterNeg};
@@ -144,8 +144,8 @@ export const cell = (config = {}, theme = {}) => {
             width = makeConstraintMix(`${calcWidth(theme[bp], resolution)}%`);
         } else {
             width = makeConstraintMix(
-                'all' in theme
-                    ? `${calcWidth(theme.all, resolution)}%`
+                'index.ts' in theme
+                    ? `${calcWidth(theme.index, resolution)}%`
                     : 'auto',
             );
         }
@@ -163,8 +163,8 @@ export const media = (rules = {}, theme = {}) => {
 
     let result = '';
 
-    if ('all' in rules) {
-        result += rules.all;
+    if ('index.ts' in rules) {
+        result += rules.index;
     }
 
     Object.keys(theme.breakpoints).forEach(bp => {
