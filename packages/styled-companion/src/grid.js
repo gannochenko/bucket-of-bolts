@@ -47,23 +47,23 @@ export const grid = (config = {}, theme = {}) => {
             const gutterHalf = op(gutter, toHalf);
             const gutterHalfNeg = op(gutterHalf, negate);
             cssSelf += `
-               margin-left: ${gutterHalfNeg};
-               margin-right: ${gutterHalfNeg};
-          `;
+                margin-left: ${gutterHalfNeg};
+                margin-right: ${gutterHalfNeg};
+            `;
             cssChildren += `
-              padding-left: ${gutterHalf};
-              padding-right: ${gutterHalf};
-          `;
+                padding-left: ${gutterHalf};
+                padding-right: ${gutterHalf};
+            `;
         }
         if (guttersH && 'all' in guttersH) {
             const gutter = guttersH.all;
             const gutterNeg = op(gutter, negate);
             cssSelf += `
-              margin-bottom: ${gutterNeg};
-          `;
+                margin-bottom: ${gutterNeg};
+            `;
             cssChildren += `
-              padding-bottom: ${gutter};
-          `;
+                padding-bottom: ${gutter};
+            `;
         }
 
         Object.keys(theme.breakpoints).forEach(bp => {
@@ -75,17 +75,17 @@ export const grid = (config = {}, theme = {}) => {
                     const gutterHalf = op(gutter, toHalf);
                     const gutterHalfNeg = op(gutterHalf, negate);
                     cssSelf += `
-                @media screen and ${media} {
-                    margin-left: ${gutterHalfNeg};
-                    margin-right: ${gutterHalfNeg};
-                };
-            `;
+                        @media screen and ${media} {
+                            margin-left: ${gutterHalfNeg};
+                            margin-right: ${gutterHalfNeg};
+                        };
+                    `;
                     cssChildren += `
-                @media screen and ${media} {
-                    padding-left: ${gutterHalf};
-                    padding-right: ${gutterHalf};
-                }
-            `;
+                        @media screen and ${media} {
+                            padding-left: ${gutterHalf};
+                            padding-right: ${gutterHalf};
+                        }
+                    `;
                 }
             }
 
@@ -94,15 +94,15 @@ export const grid = (config = {}, theme = {}) => {
                     const gutter = guttersH[bp];
                     const gutterNeg = op(gutter, negate);
                     cssSelf += `
-                @media screen and ${media} {
-                    margin-bottom: ${gutterNeg};
-                }
-            `;
+                        @media screen and ${media} {
+                            margin-bottom: ${gutterNeg};
+                        }
+                    `;
                     cssChildren += `
-                @media screen and ${media} {
-                    padding-bottom: ${gutter};
-                }
-            `;
+                        @media screen and ${media} {
+                            padding-bottom: ${gutter};
+                        }
+                    `;
                 }
             }
         });
@@ -151,8 +151,8 @@ export const cell = (config = {}, theme = {}) => {
         }
 
         result += `
-                @media screen and ${media} { ${width} }
-            `;
+            @media screen and ${media} { ${width} }
+        `;
     });
 
     return result;
