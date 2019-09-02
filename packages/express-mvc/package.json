@@ -1,5 +1,5 @@
 {
-    "name": "@bucket-of-bolts/msc",
+    "name": "@bucket-of-bolts/express-mvc",
     "version": "0.0.0",
     "main": "all.js",
     "scripts": {
@@ -41,8 +41,7 @@
     },
     "dependencies": {},
     "peerDependencies": {
-        "express": "x.x",
-        "yup": "x.x"
+        "express": "x.x"
     },
     "publishConfig": {
         "access": "public"

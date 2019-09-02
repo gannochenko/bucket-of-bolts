@@ -1,16 +1,40 @@
-import { Express, Response, Request } from 'express';
-// @ts-ignore
-import { wrapError } from 'ew-internals';
+import { Express, Response, Request, NextFunction } from 'express';
 
 import { getVaultFor, hasVaultFor } from './vault';
 import { getValidator, filterStructure } from './dto-compiler';
 
-import { RuntimeParameters, APIVaultRecord } from './type';
-import { ResultError } from '../type';
-import { Result } from '../result';
+import {
+    RuntimeParameters,
+    APIVaultRecord,
+    GenericClass,
+    Nullable,
+    ResultError,
+} from './index';
+import { Result } from './result';
 
 export const ERROR_INTERNAL = 'internal';
 export const ERROR_REQUEST = 'request';
+
+export const wrapError = (fn: Function) => async (
+    req: Request,
+    res: Response,
+    next: NextFunction,
+) => {
+    try {
+        await fn(req, res, next);
+    } catch (e) {
+        next(e);
+    }
+};
+
+const isStringNotEmpty = (arg: unknown) =>
+    typeof arg === 'string' && arg.length > 0;
+
+const isObject = (arg: unknown) =>
+    arg !== null && (typeof arg === 'object' || typeof arg === 'function');
+
+const isObjectNotEmpty = (arg: unknown) =>
+    isObject(arg) && Object.keys(arg as object).length > 0;
 
 export const useControllers = (
     app: Express,
@@ -25,7 +49,7 @@ export const useControllers = (
         const { endpoint: rootEndpoint, methods } = getVaultFor(
             controller,
         ) as APIVaultRecord;
-        if (_.isStringNotEmpty(rootEndpoint) && _.isObjectNotEmpty(methods)) {
+        if (isStringNotEmpty(rootEndpoint) && isObjectNotEmpty(methods)) {
             Object.keys(methods).forEach((methodName: string) => {
                 const methodRecord = methods[methodName];
 
@@ -36,7 +60,7 @@ export const useControllers = (
                     bodyDTO,
                     outputDTO,
                 } = methodRecord;
-                if (!_.isStringNotEmpty(method) && !_.isFunction(fn)) {
+                if (!isStringNotEmpty(method) && !(typeof fn === 'function')) {
                     return;
                 }
 
@@ -67,7 +91,6 @@ export const useControllers = (
                             const validator = getValidator(bodyDTO);
                             if (validator) {
                                 try {
-                                    // @ts-ignore
                                     await validator.validate(req.body, {
                                         abortEarly: false,
                                     });

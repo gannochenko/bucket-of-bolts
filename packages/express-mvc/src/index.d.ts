@@ -71,3 +71,9 @@ export interface DTOVaultRecord extends VaultRecord {
     isDTO: boolean;
     attributes: StringMap<DTORecord>;
 }
+
+export interface ResultError {
+    message?: string;
+    code: string;
+    type?: string;
+}

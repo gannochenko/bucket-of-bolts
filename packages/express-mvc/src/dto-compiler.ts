@@ -10,7 +10,13 @@ import {
     // eslint-disable-next-line import/no-duplicates
 } from 'yup';
 import { getVaultFor } from './vault';
-import { DTOAttributeType, DTOType, DTOVaultRecord } from './all';
+import {
+    DTOAttributeType,
+    DTOType,
+    DTOVaultRecord,
+    Nullable,
+    StringMap,
+} from './index';
 
 type YupSchemaScalar =
     | StringSchema
