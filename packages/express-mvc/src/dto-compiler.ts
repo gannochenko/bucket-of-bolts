@@ -17,6 +17,7 @@ import {
     Nullable,
     StringMap,
 } from './index';
+import { isObjectNotEmpty, isArray, intersection } from './util';
 
 type YupSchemaScalar =
     | StringSchema
@@ -45,7 +46,7 @@ export const getValidator = (dto: DTOType, depth = 1): Nullable<YupSchema> => {
     let result = yup.object();
 
     const { attributes } = vault;
-    if (!_.isObjectNotEmpty(attributes)) {
+    if (!isObjectNotEmpty(attributes)) {
         return result;
     }
 
@@ -57,15 +58,15 @@ export const getValidator = (dto: DTOType, depth = 1): Nullable<YupSchema> => {
 
         let subType: Nullable<YupSchema> = null;
         let fieldType: DTOAttributeType;
-        let isArray = false;
-        if (_.isArray(type)) {
+        let isArr = false;
+        if (isArray(type)) {
             [fieldType] = type as DTOAttributeType[];
-            isArray = true;
+            isArr = true;
         } else {
             fieldType = type as DTOAttributeType;
         }
 
-        if (_.isFunction(fieldType)) {
+        if (typeof fieldType === 'function') {
             subType = getValidator(fieldType as DTOType, depth + 1);
         } else {
             // only basic stuff so far
@@ -84,7 +85,7 @@ export const getValidator = (dto: DTOType, depth = 1): Nullable<YupSchema> => {
             throw new Error(`No DTO found for "${attributeName}" attribute`);
         }
 
-        if (isArray) {
+        if (isArr) {
             subType = yup.array().of(subType as Schema<unknown>) as ArraySchema<
                 YupSchemaScalar
             >;
@@ -127,11 +128,11 @@ export const filterStructure = (
     }
 
     const { attributes } = vault;
-    if (!_.isObjectNotEmpty(attributes)) {
+    if (!isObjectNotEmpty(attributes)) {
         return {};
     }
 
-    const legalKeys = _.intersection(
+    const legalKeys = intersection(
         Object.keys(structure),
         Object.keys(attributes),
     );
@@ -144,11 +145,11 @@ export const filterStructure = (
         } = attribute;
         const structureValue = structure[key];
 
-        if (_.isArray(type)) {
+        if (isArray(type)) {
             const [subType] = type;
-            if (_.isArray(structure[key])) {
+            if (isArray(structure[key])) {
                 // check each subitem
-                if (_.isFunction(subType)) {
+                if (typeof subType === 'function') {
                     result[key] = structureValue.map((subValue: any) =>
                         filterStructure(subValue, subType, depth + 1),
                     );
@@ -159,7 +160,7 @@ export const filterStructure = (
                 result[key] = [];
             }
         } else {
-            if (_.isFunction(type)) {
+            if (typeof type === 'function') {
                 result[key] = filterStructure(structureValue, type, depth + 1);
             } else {
                 result[key] = structureValue;

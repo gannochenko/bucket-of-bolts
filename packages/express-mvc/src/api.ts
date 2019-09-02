@@ -11,6 +11,7 @@ import {
     ResultError,
 } from './index';
 import { Result } from './result';
+import { isStringNotEmpty, isObjectNotEmpty } from './util';
 
 export const ERROR_INTERNAL = 'internal';
 export const ERROR_REQUEST = 'request';
@@ -26,15 +27,6 @@ export const wrapError = (fn: Function) => async (
         next(e);
     }
 };
-
-const isStringNotEmpty = (arg: unknown) =>
-    typeof arg === 'string' && arg.length > 0;
-
-const isObject = (arg: unknown) =>
-    arg !== null && (typeof arg === 'object' || typeof arg === 'function');
-
-const isObjectNotEmpty = (arg: unknown) =>
-    isObject(arg) && Object.keys(arg as object).length > 0;
 
 export const useControllers = (
     app: Express,

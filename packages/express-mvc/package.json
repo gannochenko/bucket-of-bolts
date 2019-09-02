@@ -39,7 +39,10 @@
         "peer-deps-externals-webpack-plugin": "^1.0.4",
         "typescript": "^3.6.2"
     },
-    "dependencies": {},
+    "dependencies": {
+        "clone-deep": "^4.0.1",
+        "yup": "^0.27.0"
+    },
     "peerDependencies": {
         "express": "x.x"
     },

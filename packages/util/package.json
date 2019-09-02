@@ -39,6 +39,9 @@
     "dependencies": {
         "naming-style": "^1.0.0"
     },
+    "peerDependencies": {
+        "moment": "x.x"
+    },
     "publishConfig": {
         "access": "public"
     },
