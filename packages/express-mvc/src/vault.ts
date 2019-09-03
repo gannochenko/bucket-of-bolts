@@ -1,4 +1,4 @@
-import { DTOType, VaultRecord, GenericClass } from './index';
+import { DTOType, VaultRecord, GenericClass } from './type';
 
 type VaultKey = GenericClass | DTOType | Function;
 

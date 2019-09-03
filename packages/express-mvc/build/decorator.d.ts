@@ -1,0 +1,11 @@
+import { DTOType, DTORecordParameter } from './type';
+export declare const Endpoint: (endpoint: string) => Function;
+export declare const Get: (endpoint?: string | undefined) => Function;
+export declare const Post: (endpoint?: string | undefined) => Function;
+export declare const Put: (endpoint?: string | undefined) => Function;
+export declare const Patch: (endpoint?: string | undefined) => Function;
+export declare const Delete: (endpoint?: string | undefined) => Function;
+export declare const BodyInput: (dto?: DTOType | undefined) => Function;
+export declare const Output: (dto?: DTOType | undefined) => Function;
+export declare const DTO: () => Function;
+export declare const Attribute: (params: DTORecordParameter) => Function;

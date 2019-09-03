@@ -1,53 +1,11 @@
 "use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _api = require("./api");
-
-Object.keys(_api).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  Object.defineProperty(exports, key, {
-    enumerable: true,
-    get: function get() {
-      return _api[key];
-    }
-  });
-});
-
-var _decorator = require("./decorator");
-
-Object.keys(_decorator).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  Object.defineProperty(exports, key, {
-    enumerable: true,
-    get: function get() {
-      return _decorator[key];
-    }
-  });
-});
-
-var _dtoCompiler = require("./dto-compiler");
-
-Object.keys(_dtoCompiler).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  Object.defineProperty(exports, key, {
-    enumerable: true,
-    get: function get() {
-      return _dtoCompiler[key];
-    }
-  });
-});
-
-var _vault = require("./vault");
-
-Object.keys(_vault).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  Object.defineProperty(exports, key, {
-    enumerable: true,
-    get: function get() {
-      return _vault[key];
-    }
-  });
-});
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+Object.defineProperty(exports, "__esModule", { value: true });
+__export(require("./api"));
+__export(require("./decorator"));
+__export(require("./dto-compiler"));
+__export(require("./vault"));
+__export(require("./result"));
+//# sourceMappingURL=index.js.map

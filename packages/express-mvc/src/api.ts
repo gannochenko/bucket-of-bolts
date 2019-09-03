@@ -9,7 +9,8 @@ import {
     GenericClass,
     Nullable,
     ResultError,
-} from './index';
+} from './type';
+
 import { Result } from './result';
 import { isStringNotEmpty, isObjectNotEmpty } from './util';
 

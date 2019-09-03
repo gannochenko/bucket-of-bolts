@@ -1,4 +1,5 @@
-// eslint-disable-next-line import/no-duplicates
+/* eslint-disable import/no-duplicates */
+// @ts-ignore
 import * as yup from 'yup';
 import {
     Schema,
@@ -7,7 +8,7 @@ import {
     BooleanSchema,
     ArraySchema,
     ObjectSchema,
-    // eslint-disable-next-line import/no-duplicates
+    // @ts-ignore
 } from 'yup';
 import { getVaultFor } from './vault';
 import {
@@ -16,7 +17,8 @@ import {
     DTOVaultRecord,
     Nullable,
     StringMap,
-} from './index';
+} from './type';
+
 import { isObjectNotEmpty, isArray, intersection } from './util';
 
 type YupSchemaScalar =

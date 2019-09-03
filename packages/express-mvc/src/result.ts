@@ -1,6 +1,6 @@
 // @ts-ignore
 import cloneDeep from 'clone-deep';
-import { ResultError, StringMap, Nullable } from './index';
+import { ResultError, StringMap, Nullable } from './type';
 
 export class Result {
     public data?: StringMap = {};

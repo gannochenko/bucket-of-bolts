@@ -1,25 +1,27 @@
 import { Request, Response } from 'express';
 import { IncomingHttpHeaders } from 'http';
 
-type Nullable<X = any> = X | null;
+export type Nullable<X = any> = X | null;
 
-interface StringMap<P = any> {
+export interface StringMap<P = any> {
     [key: string]: P;
 }
 
-interface IntegerMap<P = any> {
+export interface IntegerMap<P = any> {
     [key: number]: P;
 }
 
-interface GenericClass {
+export interface GenericClass {
     new (...args: any[]): {};
 }
+
+export type RuntimeParameters = any;
 
 export type PropertyDescriptor = TypedPropertyDescriptor<
     (params: any) => Promise<any>
 > & { initializer?: Function } & { value?: Function };
 
-export interface InputContext<RP = any> {
+export interface InputContext<RP = RuntimeParameters> {
     req: Request;
     res: Response;
     body: any;
@@ -31,7 +33,7 @@ export interface DTOType extends GenericClass {}
 
 export type DTOAttributeType = DTOType | 'string' | 'number' | 'boolean';
 
-interface MethodRecordCallbackContext<RP = any> {
+export interface MethodRecordCallbackContext<RP = RuntimeParameters> {
     req: Request;
     res: Response;
     body: any;

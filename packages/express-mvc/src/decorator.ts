@@ -5,7 +5,8 @@ import {
     DTOType,
     DTORecordParameter,
     GenericClass,
-} from './index';
+} from './type';
+
 import { getVaultFor } from './vault';
 
 export const Endpoint = (endpoint: string): Function => {
