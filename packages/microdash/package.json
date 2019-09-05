@@ -1,7 +1,7 @@
 {
     "name": "@bucket-of-bolts/microdash",
     "version": "0.0.0",
-    "main": "all.js",
+    "main": "index.js",
     "scripts": {
         "prepare": "install-self-peers -- --ignore-scripts",
         "build": "./script/build-tsc.sh",
