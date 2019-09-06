@@ -1,0 +1,10 @@
+export declare const zIxSun = 7000;
+export declare const zIxVenus = 6000;
+export declare const zIxMars = 5000;
+export declare const zIxMoon = 4000;
+export declare const zIxOrbit = 3000;
+export declare const zIxStratosphere = 2000;
+export declare const zIxEverest = 1000;
+export declare const zIxGround = 0;
+export declare const zIxSeaBottom = -1000;
+export declare const zIxHell = -2000;
