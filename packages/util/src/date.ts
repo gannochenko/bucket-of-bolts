@@ -10,6 +10,8 @@ interface TimeLineItem {
     currentMonth: boolean;
 }
 
+type Nullable<T> = T | null;
+
 export const convertLocalDateToUTC = (date: Date) => {
     return new Date(
         Date.UTC(
@@ -56,7 +58,7 @@ export const getCalendar = (
 
         if (typeof chosen === 'string') {
             chosenDate = new Date(chosen);
-        } else if (_.isDate(chosen)) {
+        } else if (chosen instanceof Date) {
             chosenDate = chosen as Date;
         }
 
