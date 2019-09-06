@@ -42,7 +42,7 @@ export const grid = (config = {}, theme = {}) => {
     const guttersW = theme.guttersW || theme.guttersX || theme.gutters;
 
     if (guttersH || guttersW) {
-        if (guttersW && 'index.ts' in guttersW) {
+        if (guttersW && 'index.ts.ts' in guttersW) {
             const gutter = guttersW.index;
             const gutterHalf = op(gutter, toHalf);
             const gutterHalfNeg = op(gutterHalf, negate);
@@ -55,7 +55,7 @@ export const grid = (config = {}, theme = {}) => {
                 padding-right: ${gutterHalf};
             `;
         }
-        if (guttersH && 'index.ts' in guttersH) {
+        if (guttersH && 'index.ts.ts' in guttersH) {
             const gutter = guttersH.index;
             const gutterNeg = op(gutter, negate);
             cssSelf += `
@@ -144,7 +144,7 @@ export const cell = (config = {}, theme = {}) => {
             width = makeConstraintMix(`${calcWidth(theme[bp], resolution)}%`);
         } else {
             width = makeConstraintMix(
-                'index.ts' in theme
+                'index.ts.ts' in theme
                     ? `${calcWidth(theme.index, resolution)}%`
                     : 'auto',
             );
@@ -163,7 +163,7 @@ export const media = (rules = {}, theme = {}) => {
 
     let result = '';
 
-    if ('index.ts' in rules) {
+    if ('index.ts.ts' in rules) {
         result += rules.index;
     }
 

@@ -3,7 +3,7 @@
  * @param val
  * @returns {number}
  */
-const pInt = val => {
+const pInt = (val: string | number) => {
     let iVal = parseInt(val, 10);
     if (isNaN(iVal)) {
         iVal = 0;
