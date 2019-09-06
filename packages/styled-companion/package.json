@@ -1,10 +1,10 @@
 {
     "name": "@bucket-of-bolts/styled-companion",
     "version": "0.0.0",
-    "main": "all.js",
+    "main": "index.js",
     "scripts": {
         "prepare": "install-self-peers -- --ignore-scripts",
-        "build": "./script/build.sh",
+        "build": "./script/build-tsc.sh",
         "test": "jest -c ./jest/config.js --passWithNoTests",
         "test:dev": "jest -c ./jest/config.js --watch",
         "lint": "eslint ./src",

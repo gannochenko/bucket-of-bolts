@@ -18,7 +18,8 @@
         "sourceMap": true,
         "baseUrl": "./src/",
         "outDir": "./build/",
-        "declaration": true
+        "declaration": true,
+        "types": []
     },
     "exclude": ["node_modules", "build"],
     "include": ["src/**/*", "src/global.d.ts"]
