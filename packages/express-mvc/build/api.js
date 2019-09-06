@@ -42,24 +42,6 @@ var result_1 = require("./result");
 var util_1 = require("./util");
 exports.ERROR_INTERNAL = 'internal';
 exports.ERROR_REQUEST = 'request';
-exports.wrapError = function (fn) { return function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var e_1;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                return [4, fn(req, res, next)];
-            case 1:
-                _a.sent();
-                return [3, 3];
-            case 2:
-                e_1 = _a.sent();
-                next(e_1);
-                return [3, 3];
-            case 3: return [2];
-        }
-    });
-}); }; };
 exports.useControllers = function (app, controllers, runtimeParameters) {
     controllers.forEach(function (controller) {
         if (!vault_1.hasVaultFor(controller)) {
@@ -92,8 +74,8 @@ exports.useControllers = function (app, controllers, runtimeParameters) {
                 if (!appFunction) {
                     throw new Error("Unsupported method produced by a decorator: " + method);
                 }
-                appFunction(rootEndpoint + "/" + endpoint, exports.wrapError(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-                    var errors, validator, e_2, result, status, headers;
+                appFunction(rootEndpoint + "/" + endpoint, util_1.wrapError(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+                    var errors, validator, e_1, result, status, headers;
                     return __generator(this, function (_a) {
                         switch (_a.label) {
                             case 0:
@@ -112,8 +94,8 @@ exports.useControllers = function (app, controllers, runtimeParameters) {
                                 req.body = dto_compiler_1.filterStructure(req.body, bodyDTO);
                                 return [3, 4];
                             case 3:
-                                e_2 = _a.sent();
-                                e_2.inner.forEach(function (error) {
+                                e_1 = _a.sent();
+                                e_1.inner.forEach(function (error) {
                                     errors.push({
                                         message: error.message,
                                         code: 'validation',
