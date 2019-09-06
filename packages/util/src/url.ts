@@ -1,10 +1,15 @@
+// @ts-ignore
 import { stringify, parse } from '@m59/qs';
 
-export const injectPassword = (url, password = null) => {
-    if (url === null) {
-        return '';
-    }
+type Nullable<T> = T | null;
+interface ObjectLiteral {
+    [k: string]: any;
+}
 
+export const injectPassword = (
+    url: string,
+    password: Nullable<string> = null,
+) => {
     if (typeof password === 'string' && password.length) {
         const oUrl = new URL(url);
         oUrl.password = password;
@@ -15,7 +20,7 @@ export const injectPassword = (url, password = null) => {
     return url;
 };
 
-export const decomposeURL = url => {
+export const decomposeURL = (url: string) => {
     const oUrl = new URL(url);
 
     const parts = {
@@ -24,7 +29,7 @@ export const decomposeURL = url => {
         password: oUrl.password,
     };
 
-    if (!(typeof parts.host === 'string') || !parts.host.length) {
+    if (!parts.host.length) {
         // invalid url
         return null;
     }
@@ -36,14 +41,12 @@ export const decomposeURL = url => {
     return parts;
 };
 
-export const putSearchParameters = (url, params) => {
+export const putSearchParameters = (url: string, params: ObjectLiteral) => {
     return `?${stringify(
         Object.assign({}, parse(url.replace(/^\?/, '')), params),
     )}`;
 };
 
-export const parseSearch = url => parse(url.replace(/^\?/, ''));
-
-// todo: move to ew-internals
-export const sanitize = str => str.replace(/[^a-z0-9_-]/gi, '');
-export const escapeQuote = str => str.replace(/"/g, '"');
+export const parseSearch = (url: string) => parse(url.replace(/^\?/, ''));
+export const sanitize = (str: string) => str.replace(/[^a-z0-9_-]/gi, '');
+export const escapeQuote = (str: string) => str.replace(/"/g, '"');

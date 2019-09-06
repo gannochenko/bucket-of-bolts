@@ -943,6 +943,14 @@
     "@types/istanbul-lib-coverage" "^1.1.0"
     "@types/yargs" "^12.0.9"
 
+"@m59/qs@^2.0.3":
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@m59/qs/-/qs-2.0.3.tgz#ade70f1c13f2c44141af5b79eb21d2b09b16ca65"
+  integrity sha512-HDQP7e1lxtzoMPfofUbmgWV+CutccdcuUmB25nFJP41DvW6k9hyrxefe5qzNeThvcnM0+eVTrxdX+8QYuyiIFQ==
+  dependencies:
+    encode-3986 "^1.0.0"
+    try_catch "^1.0.2"
+
 "@team-griffin/install-self-peers@^1.1.1":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@team-griffin/install-self-peers/-/install-self-peers-1.1.1.tgz#de0fd354be3f44dfd84dd79bc011d8a3af38e354"
@@ -1004,6 +1012,11 @@
   version "11.11.3"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-11.11.3.tgz#7c6b0f8eaf16ae530795de2ad1b85d34bf2f5c58"
   integrity sha512-wp6IOGu1lxsfnrD+5mX6qwSwWuqsdkKKxTN4aQc4wByHAKZJf9/D4KXPQ1POUjEbnCP5LMggB0OEFNY9OTsMqg==
+
+"@types/node@^12.7.4":
+  version "12.7.4"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.7.4.tgz#64db61e0359eb5a8d99b55e05c729f130a678b04"
+  integrity sha512-W0+n1Y+gK/8G2P/piTkBBN38Qc5Q1ZSO6B5H3QmPCUewaiXOo2GCAWZ4ElZCcNhjJuBSUSLGFUJnmlCn5+nxOQ==
 
 "@types/stack-utils@^1.0.1":
   version "1.0.1"
@@ -1926,6 +1939,11 @@ emoji-regex@^7.0.1, emoji-regex@^7.0.2:
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-7.0.3.tgz#933a04052860c85e83c122479c4748a8e4c72156"
   integrity sha512-CwBLREIQ7LvYFB0WyRvwhq5N5qPhc6PMjD6bYggFlI5YyDgl+0vxq5VHbMOFqLg7hfWzmu8T5Z1QofhmTIhItA==
+
+encode-3986@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/encode-3986/-/encode-3986-1.0.0.tgz#940d51498f8741ade184b75ad1439b317c0c7a60"
+  integrity sha1-lA1RSY+HQa3hhLda0UObMXwMemA=
 
 end-of-stream@^1.1.0:
   version "1.4.1"
@@ -5180,6 +5198,11 @@ trim-right@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
   integrity sha1-yy4SAwZ+DI3h9hQJS5/kVwTqYAM=
+
+try_catch@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/try_catch/-/try_catch-1.0.2.tgz#87de842c23dea42ae384608baccf1e7d9f34617f"
+  integrity sha1-h96ELCPepCrjhGCLrM8efZ80YX8=
 
 tslib@^1.8.1:
   version "1.10.0"

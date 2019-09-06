@@ -1,5 +1,12 @@
+// @ts-ignore
+import process from 'process';
+
+interface ObjectLiteral {
+    [k: string]: any;
+}
+
 export class Settings {
-    async get(name, defaultValue = null) {
+    async get(name: string, defaultValue: any = null) {
         if (name in process.env) {
             return process.env[name];
         }
@@ -14,10 +21,10 @@ export class Settings {
     }
 
     // eslint-disable-next-line no-unused-vars,no-empty-function
-    async set(name, value) {}
+    async set(name: string, value: any) {}
 
-    async forward(list) {
-        const result = {};
+    async forward(list: string[]) {
+        const result: ObjectLiteral = {};
         if (list && list.length) {
             // todo: use Promise.all() here
             for (let i = 0; i < list.length; i += 1) {

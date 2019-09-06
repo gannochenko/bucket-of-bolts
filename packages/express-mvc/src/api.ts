@@ -1,4 +1,4 @@
-import { Express, Response, Request, NextFunction } from 'express';
+import { Express, Response, Request } from 'express';
 
 import { getVaultFor, hasVaultFor } from './vault';
 import { getValidator, filterStructure } from './dto-compiler';
@@ -12,22 +12,10 @@ import {
 } from './type';
 
 import { Result } from './result';
-import { isStringNotEmpty, isObjectNotEmpty } from './util';
+import { isStringNotEmpty, isObjectNotEmpty, wrapError } from './util';
 
 export const ERROR_INTERNAL = 'internal';
 export const ERROR_REQUEST = 'request';
-
-export const wrapError = (fn: Function) => async (
-    req: Request,
-    res: Response,
-    next: NextFunction,
-) => {
-    try {
-        await fn(req, res, next);
-    } catch (e) {
-        next(e);
-    }
-};
 
 export const useControllers = (
     app: Express,
