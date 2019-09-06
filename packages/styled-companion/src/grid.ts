@@ -1,9 +1,21 @@
 import { op } from './util';
 
-const toHalf = x => x / 2;
-const negate = x => x * -1;
+interface Theme {
+    [k: string]:
+        | string
+        | number
+        | boolean
+        | string[]
+        | number[]
+        | boolean[]
+        | Theme
+        | object;
+}
 
-const checkTheme = theme => {
+const toHalf = (x: number) => x / 2;
+const negate = (x: number) => x * -1;
+
+const checkTheme = (theme: Theme) => {
     theme = theme || {};
     theme.resolution = theme.resolution || 12;
     theme.breakpoints = theme.breakpoints || {
@@ -13,9 +25,11 @@ const checkTheme = theme => {
         lg: [1200, null], // min-width: 1200
     };
 
-    const bpMedia = {};
-    Object.keys(theme.breakpoints).forEach(bp => {
-        const item = theme.breakpoints[bp];
+    const bpMedia: { [k: string]: string } = {};
+    Object.keys(theme.breakpoints).forEach((bp: string) => {
+        const item = (theme.breakpoints as { [k: string]: (number | null)[] })[
+            bp
+        ];
         const range = [];
         if (item[0]) {
             range.push(`(min-width: ${item[0]}px)`);
@@ -31,7 +45,7 @@ const checkTheme = theme => {
     return theme;
 };
 
-export const grid = (config = {}, theme = {}) => {
+export const grid = (config: Theme = {}, theme: Theme = {}) => {
     theme = Object.assign({}, checkTheme(theme), config);
 
     let cssSelf = '';

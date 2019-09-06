@@ -1,12 +1,18 @@
+type Nullable<T> = T | null;
+type Scalar = string | number;
+
 /**
  * Converts a numeric value into int
- * @param val
- * @returns {number}
  */
-const pInt = (val: string | number) => {
-    let iVal = parseInt(val, 10);
-    if (isNaN(iVal)) {
-        iVal = 0;
+export const pInt = (val: Nullable<Scalar>) => {
+    let iVal = 0;
+    if (typeof val === 'string') {
+        iVal = parseInt(val, 10);
+        if (Number.isNaN(iVal)) {
+            iVal = 0;
+        }
+    } else if (typeof val !== 'undefined' && val !== null) {
+        iVal = val;
     }
 
     return iVal;
@@ -14,26 +20,23 @@ const pInt = (val: string | number) => {
 
 /**
  * Performs an operation on val by applying a function
- * @param val
- * @param fn
- * @returns {*}
  */
-export const op = (val, fn) => {
-    if (typeof val === 'undefined') {
+export const op = (val: Nullable<Scalar>, fn: (arg: number) => number) => {
+    if (typeof val === 'undefined' || val === null) {
         return val;
     }
 
-    const f = val
+    const results = val
         .toString()
         .trim()
         .match(/^(\d+)?(.(\d+))?(px|rem|em)?$/i);
-    if (f.length) {
-        const full = pInt(f[1]);
-        const frac = pInt(f[3]);
-        const unit = f[4] || '';
+    if (results && results.length) {
+        const full = pInt(results[1]);
+        const frac = pInt(results[3]);
+        const unit = results[4] || '';
 
         return `${fn(full + +`0.${frac}`)}${unit}`;
     }
 
-    return val;
+    return val.toString();
 };

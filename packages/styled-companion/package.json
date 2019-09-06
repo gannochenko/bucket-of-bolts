@@ -40,7 +40,8 @@
         "typescript": "^3.6.2"
     },
     "peerDependencies": {
-        "styled-components": "x.x"
+        "styled-components": "x.x",
+        "@types/styled-components": "x.x"
     },
     "publishConfig": {
         "access": "public"
