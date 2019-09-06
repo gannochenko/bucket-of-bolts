@@ -240,7 +240,7 @@ export const helvetica = () => `
 
 export const fgColor = (
     color = 'inherit',
-    hoverColor = null,
+    hoverColor: Nullable<string> = null,
     transitionTime: Scalar = 0,
 ) => `
     color: ${color};

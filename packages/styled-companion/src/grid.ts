@@ -164,11 +164,13 @@ export const cell = (config: Theme = {}, theme: Theme = {}) => {
         let width = '';
         if (bp in theme) {
             // todo: cache, but measure the performance
-            width = makeConstraintMix(`${calcWidth(theme[bp], resolution)}%`);
+            width = makeConstraintMix(
+                `${calcWidth(theme[bp] as number, resolution as number)}%`,
+            );
         } else {
             width = makeConstraintMix(
-                'index.ts.ts' in theme
-                    ? `${calcWidth(theme.all, resolution)}%`
+                'all' in theme
+                    ? `${calcWidth(theme.all as number, resolution as number)}%`
                     : 'auto',
             );
         }
@@ -181,13 +183,13 @@ export const cell = (config: Theme = {}, theme: Theme = {}) => {
     return result;
 };
 
-export const media = (rules = {}, theme: Theme = {}) => {
+export const media = (rules: Theme = {}, theme: Theme = {}) => {
     theme = checkTheme(theme);
 
     let result = '';
 
     if ('all' in rules) {
-        result += rules.index;
+        result += rules.all;
     }
 
     Object.keys(theme.breakpoints).forEach(bp => {
