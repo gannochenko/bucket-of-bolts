@@ -1,6 +1,6 @@
 {
     "name": "@bucket-of-bolts/ui",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "main": "index.js",
     "scripts": {
         "prepare": "install-self-peers -- --ignore-scripts",
