@@ -12,6 +12,10 @@ interface Theme {
         | object;
 }
 
+interface ObjectLiteral {
+    [k: string]: any;
+}
+
 const toHalf = (x: number) => x / 2;
 const negate = (x: number) => x * -1;
 
@@ -52,12 +56,16 @@ export const grid = (config: Theme = {}, theme: Theme = {}) => {
     let cssChildren = '';
 
     // gutters
-    const guttersH = theme.guttersH || theme.guttersY || theme.gutters;
-    const guttersW = theme.guttersW || theme.guttersX || theme.gutters;
+    const guttersH = (theme.guttersH ||
+        theme.guttersY ||
+        theme.gutters) as ObjectLiteral;
+    const guttersW = (theme.guttersW ||
+        theme.guttersX ||
+        theme.gutters) as ObjectLiteral;
 
     if (guttersH || guttersW) {
-        if (guttersW && 'index.ts.ts' in guttersW) {
-            const gutter = guttersW.index;
+        if (guttersW && 'all' in guttersW) {
+            const gutter = guttersW.all;
             const gutterHalf = op(gutter, toHalf);
             const gutterHalfNeg = op(gutterHalf, negate);
             cssSelf += `
@@ -69,8 +77,9 @@ export const grid = (config: Theme = {}, theme: Theme = {}) => {
                 padding-right: ${gutterHalf};
             `;
         }
-        if (guttersH && 'index.ts.ts' in guttersH) {
-            const gutter = guttersH.index;
+
+        if (guttersH && 'all' in guttersH) {
+            const gutter = guttersH.all;
             const gutterNeg = op(gutter, negate);
             cssSelf += `
                 margin-bottom: ${gutterNeg};
@@ -81,7 +90,7 @@ export const grid = (config: Theme = {}, theme: Theme = {}) => {
         }
 
         Object.keys(theme.breakpoints).forEach(bp => {
-            const media = theme.media[bp];
+            const media = (theme.media as ObjectLiteral)[bp];
 
             if (guttersW) {
                 if (bp in guttersW) {
@@ -133,25 +142,25 @@ export const grid = (config: Theme = {}, theme: Theme = {}) => {
     `;
 };
 
-const makeConstraintMix = width => {
+const makeConstraintMix = (width: string) => {
     return `
         flex-basis: ${width};
         width: ${width};
     `;
 };
 
-const calcWidth = (width, resolution) =>
+const calcWidth = (width: number, resolution: number) =>
     Math.floor((width / resolution) * 1000) * 0.1;
 
-export const cell = (config = {}, theme = {}) => {
-    theme = Object.assign({}, checkTheme(theme), config);
+export const cell = (config: Theme = {}, theme: Theme = {}) => {
+    theme = Object.assign({}, checkTheme(theme), config) as Theme;
 
     let result = '';
 
-    const resolution = theme.resolution;
+    const { resolution } = theme;
 
     Object.keys(theme.breakpoints).forEach(bp => {
-        const media = theme.media[bp];
+        const media = (theme.media as ObjectLiteral)[bp];
         let width = '';
         if (bp in theme) {
             // todo: cache, but measure the performance
@@ -159,7 +168,7 @@ export const cell = (config = {}, theme = {}) => {
         } else {
             width = makeConstraintMix(
                 'index.ts.ts' in theme
-                    ? `${calcWidth(theme.index, resolution)}%`
+                    ? `${calcWidth(theme.all, resolution)}%`
                     : 'auto',
             );
         }
@@ -172,20 +181,20 @@ export const cell = (config = {}, theme = {}) => {
     return result;
 };
 
-export const media = (rules = {}, theme = {}) => {
+export const media = (rules = {}, theme: Theme = {}) => {
     theme = checkTheme(theme);
 
     let result = '';
 
-    if ('index.ts.ts' in rules) {
+    if ('all' in rules) {
         result += rules.index;
     }
 
     Object.keys(theme.breakpoints).forEach(bp => {
-        const media = theme.media[bp];
+        const mediaInfo = (theme.media as ObjectLiteral)[bp];
         if (bp in rules) {
             result += `
-                @media screen and ${media} {
+                @media screen and ${mediaInfo} {
                     ${rules[bp]}
                 }
             `;
