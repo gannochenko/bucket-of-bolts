@@ -2,19 +2,19 @@
 
 type Nullable<T> = T | null;
 
-export const debug = (message: string) => {
+export const logDebug = (message: string) => {
     console.log(JSON.stringify({ level: 'DEBUG', message }));
 };
 
-export const info = (message: string) => {
+export const logInfo = (message: string) => {
     console.log(JSON.stringify({ level: 'INFO', message }));
 };
 
-export const warn = (message: string) => {
+export const logWarning = (message: string) => {
     console.log(JSON.stringify({ level: 'WARNING', message }));
 };
 
-export const error = (
+export const logError = (
     message: string,
     messageError: Nullable<Error> = null,
 ) => {
