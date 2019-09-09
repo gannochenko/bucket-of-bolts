@@ -19,4 +19,5 @@ export default {
         args.reduce((a, b) => a.filter(c => b.includes(c))),
     difference: (...args: any[][]) =>
         args.reduce((a, b) => a.filter(c => !b.includes(c))),
+    unique: (arg: any[]) => [...new Set(arg)], // todo: heavy, but for now okay
 };

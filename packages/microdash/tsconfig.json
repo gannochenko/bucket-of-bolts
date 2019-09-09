@@ -19,6 +19,7 @@
         "baseUrl": "./src/",
         "outDir": "./build/",
         "declaration": true,
+        "downlevelIteration": true,
         "types": []
     },
     "exclude": ["node_modules", "build"],
