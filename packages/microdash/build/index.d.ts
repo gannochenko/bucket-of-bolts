@@ -8,5 +8,6 @@ declare const _default: {
     union: (arg1: any[], arg2: any[]) => any[];
     intersection: (...args: any[][]) => any[];
     difference: (...args: any[][]) => any[];
+    unique: (arg: any[]) => any[];
 };
 export default _default;
