@@ -3,12 +3,12 @@
     "version": "1.0.4",
     "main": "index.js",
     "scripts": {
-        "prepare": "install-self-peers -- --ignore-scripts",
-        "build": "./script/build.sh",
+        "install-peers": "install-self-peers -- --ignore-scripts",
+        "build": "./script/build-tsc.sh",
         "test": "jest -c ./jest/config.js --passWithNoTests",
         "test:dev": "jest -c ./jest/config.js --watch",
-        "lint": "eslint ./src",
-        "lint:fix": "eslint ./src --fix"
+        "lint": "eslint ./src --ext .js,.ts,.jsx,.tsx",
+        "lint:fix": "eslint ./src --fix --ext .js,.ts,.jsx,.tsx"
     },
     "keywords": [],
     "author": "gannochenko.sv@gmail.com",
