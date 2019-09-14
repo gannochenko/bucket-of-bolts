@@ -14,7 +14,7 @@ export class Result {
         };
     }
 
-    public setErrors(errors: ResultError) {
+    public setErrors(errors: ResultError[]) {
         this.errors = cloneDeep(errors);
     }
 }
