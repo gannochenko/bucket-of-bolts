@@ -4,5 +4,5 @@ export declare class Result {
     errors: ResultError[];
     status?: Nullable<number>;
     toJSON(): object;
-    setErrors(errors: ResultError): void;
+    setErrors(errors: ResultError[]): void;
 }
