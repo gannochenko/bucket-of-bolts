@@ -4,7 +4,7 @@
     "main": "index.js",
     "scripts": {
         "install-peers": "install-self-peers -- --ignore-scripts",
-        "build": "./script/build-tsc.sh",
+        "build": "./script/build.sh",
         "test": "jest -c ./jest/config.js --passWithNoTests",
         "test:dev": "jest -c ./jest/config.js --watch",
         "lint": "eslint ./src --ext .js,.ts,.jsx,.tsx",
