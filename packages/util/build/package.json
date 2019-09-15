@@ -1,5 +1,5 @@
 {
-    "name": "@bucket-of-bolts/express-mvc",
+    "name": "@bucket-of-bolts/util",
     "version": "1.0.11",
     "main": "index.js",
     "scripts": {
@@ -24,8 +24,9 @@
         "@babel/preset-react": "^7.0.0",
         "@babel/preset-typescript": "^7.3.3",
         "@team-griffin/install-self-peers": "^1.1.1",
-        "@typescript-eslint/eslint-plugin": "^2.0.0",
-        "@typescript-eslint/parser": "^2.0.0",
+        "@types/node": "^12.7.4",
+        "@typescript-eslint/eslint-plugin": "^2.1.0",
+        "@typescript-eslint/parser": "^2.1.0",
         "babel-eslint": "^10.0.2",
         "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
         "eslint": "^6.3.0",
@@ -38,15 +39,15 @@
         "eslint-plugin-react-hooks": "^1.6.0",
         "jest": "^24.3.1",
         "peer-deps-externals-webpack-plugin": "^1.0.4",
+        "regenerator-runtime": "^0.13.3",
         "typescript": "^3.6.2"
     },
     "dependencies": {
-        "@types/express": "^4.17.1",
-        "clone-deep": "^4.0.1",
-        "yup": "^0.27.0"
+        "@m59/qs": "^2.0.3",
+        "naming-style": "^1.0.0"
     },
     "peerDependencies": {
-        "express": "x.x"
+        "moment": "x.x"
     },
     "publishConfig": {
         "access": "public"
