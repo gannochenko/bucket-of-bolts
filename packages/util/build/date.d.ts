@@ -10,7 +10,7 @@ interface TimeLineItem {
 export declare const convertLocalDateToUTC: (date: Date) => Date;
 export declare const convertUTCToDate: (date: Date) => Date;
 export declare const getCalendar: (date: Date, chosen?: string | Date | null) => {
-    cMonth: any;
+    cMonth: number;
     grid: TimeLineItem[][];
 };
 export {};
