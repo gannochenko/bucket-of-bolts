@@ -74,76 +74,79 @@ exports.useControllers = function (app, controllers, runtimeParameters) {
                 if (!appFunction) {
                     throw new Error("Unsupported method produced by a decorator: " + method);
                 }
-                appFunction(rootEndpoint + "/" + endpoint, util_1.wrapError(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-                    var errors, validator, e_1, result, status, headers;
-                    return __generator(this, function (_a) {
-                        switch (_a.label) {
-                            case 0:
-                                errors = [];
-                                if (!bodyDTO) return [3, 4];
-                                validator = dto_compiler_1.getValidator(bodyDTO);
-                                if (!validator) return [3, 4];
-                                _a.label = 1;
-                            case 1:
-                                _a.trys.push([1, 3, , 4]);
-                                return [4, validator.validate(req.body, {
-                                        abortEarly: false,
-                                    })];
-                            case 2:
-                                _a.sent();
-                                req.body = dto_compiler_1.filterStructure(req.body, bodyDTO);
-                                return [3, 4];
-                            case 3:
-                                e_1 = _a.sent();
-                                e_1.inner.forEach(function (error) {
-                                    errors.push({
-                                        message: error.message,
-                                        code: 'validation',
-                                        type: exports.ERROR_REQUEST,
+                appFunction.apply(app, [
+                    rootEndpoint + "/" + endpoint,
+                    util_1.wrapError(function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+                        var errors, validator, e_1, result, status, headers;
+                        return __generator(this, function (_a) {
+                            switch (_a.label) {
+                                case 0:
+                                    errors = [];
+                                    if (!bodyDTO) return [3, 4];
+                                    validator = dto_compiler_1.getValidator(bodyDTO);
+                                    if (!validator) return [3, 4];
+                                    _a.label = 1;
+                                case 1:
+                                    _a.trys.push([1, 3, , 4]);
+                                    return [4, validator.validate(req.body, {
+                                            abortEarly: false,
+                                        })];
+                                case 2:
+                                    _a.sent();
+                                    req.body = dto_compiler_1.filterStructure(req.body, bodyDTO);
+                                    return [3, 4];
+                                case 3:
+                                    e_1 = _a.sent();
+                                    e_1.inner.forEach(function (error) {
+                                        errors.push({
+                                            message: error.message,
+                                            code: 'validation',
+                                            type: exports.ERROR_REQUEST,
+                                        });
                                     });
-                                });
-                                return [3, 4];
-                            case 4:
-                                result = null;
-                                if (!errors.length) return [3, 5];
-                                result = new result_1.Result();
-                                result.errors = errors;
-                                return [3, 7];
-                            case 5: return [4, fn(req.params || {}, {
-                                    req: req,
-                                    res: res,
-                                    body: req.body,
-                                    headers: req.headers,
-                                    runtime: runtimeParameters,
-                                })];
-                            case 6:
-                                result = _a.sent();
-                                _a.label = 7;
-                            case 7:
-                                status = 200;
-                                if (result instanceof result_1.Result) {
-                                    if (result.status) {
-                                        status = result.status;
+                                    return [3, 4];
+                                case 4:
+                                    result = null;
+                                    if (!errors.length) return [3, 5];
+                                    result = new result_1.Result();
+                                    result.errors = errors;
+                                    return [3, 7];
+                                case 5: return [4, fn(req.params || {}, {
+                                        req: req,
+                                        res: res,
+                                        body: req.body,
+                                        headers: req.headers,
+                                        runtime: runtimeParameters,
+                                    })];
+                                case 6:
+                                    result = _a.sent();
+                                    _a.label = 7;
+                                case 7:
+                                    status = 200;
+                                    if (result instanceof result_1.Result) {
+                                        if (result.status) {
+                                            status = result.status;
+                                        }
+                                        else if (result.errors.find(function (error) { return error.type === exports.ERROR_INTERNAL; })) {
+                                            status = 500;
+                                        }
+                                        else if (result.errors.find(function (error) { return error.type === exports.ERROR_REQUEST; })) {
+                                            status = 400;
+                                        }
+                                        if (outputDTO) {
+                                            result.data = dto_compiler_1.filterStructure(result.data || [], outputDTO);
+                                        }
                                     }
-                                    else if (result.errors.find(function (error) { return error.type === exports.ERROR_INTERNAL; })) {
-                                        status = 500;
+                                    res.status(status);
+                                    headers = res.getHeaders();
+                                    if (!('Content-Type' in headers)) {
+                                        res.header('Content-Type', 'application/json');
                                     }
-                                    else if (result.errors.find(function (error) { return error.type === exports.ERROR_REQUEST; })) {
-                                        status = 400;
-                                    }
-                                    if (outputDTO) {
-                                        result.data = dto_compiler_1.filterStructure(result.data || [], outputDTO);
-                                    }
-                                }
-                                res.status(status);
-                                headers = res.getHeaders();
-                                if (!('Content-Type' in headers)) {
-                                    res.header('Content-Type', 'application/json');
-                                }
-                                return [2, res.send(JSON.stringify(result))];
-                        }
-                    });
-                }); }));
+                                    return [2, res.send(JSON.stringify(result))];
+                            }
+                        });
+                    }); }),
+                ]);
             });
         }
     });

@@ -12,11 +12,16 @@ exports.logWarning = function (message) {
 exports.logError = function (message, messageError) {
     if (messageError === void 0) { messageError = null; }
     var details = '';
-    if (messageError instanceof Error && messageError.stack) {
-        var stack = messageError.stack.split('\n');
-        stack.shift();
-        stack = stack.map(function (level) { return level.replace('    at ', ''); });
-        details = stack.join('; ');
+    if (messageError instanceof Error) {
+        if (messageError.stack) {
+            var stack = messageError.stack.split('\n');
+            stack.shift();
+            stack = stack.map(function (level) { return level.replace('    at ', ''); });
+            details = stack.join('; ');
+        }
+        if (messageError.message) {
+            message = message + ": " + messageError.message;
+        }
     }
     console.log(JSON.stringify({ level: 'ERROR', message: message, details: details }));
 };
