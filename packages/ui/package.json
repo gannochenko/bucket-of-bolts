@@ -8,7 +8,8 @@
         "test": "jest -c ./jest/config.js --passWithNoTests",
         "test:dev": "jest -c ./jest/config.js --watch",
         "lint": "eslint ./src --ext .js,.ts,.jsx,.tsx",
-        "lint:fix": "eslint ./src --fix --ext .js,.ts,.jsx,.tsx"
+        "lint:fix": "eslint ./src --fix --ext .js,.ts,.jsx,.tsx",
+        "prepublishOnly": "./script/prepublish.sh"
     },
     "keywords": [],
     "author": "gannochenko.sv@gmail.com",
@@ -48,5 +49,5 @@
     "publishConfig": {
         "access": "public"
     },
-    "gitHead": "0c7abd9d331667c84f6c363feb814f0e8c6d556f"
+    "gitHead": "3282780bddb72eba8a0708aebdb464211c3a9502"
 }
