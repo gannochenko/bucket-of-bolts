@@ -1,6 +1,6 @@
 {
     "name": "@bucket-of-bolts/styled-companion",
-    "version": "1.0.9",
+    "version": "1.0.11",
     "main": "index.js",
     "scripts": {
         "install-peers": "install-self-peers -- --ignore-scripts",
