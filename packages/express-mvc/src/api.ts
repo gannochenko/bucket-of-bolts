@@ -64,7 +64,7 @@ export const useControllers = (
                     );
                 }
 
-                appFunction(
+                appFunction.apply(app, [
                     `${rootEndpoint}/${endpoint}`,
                     wrapError(async (req: Request, res: Response) => {
                         const errors: ResultError[] = [];
@@ -140,7 +140,7 @@ export const useControllers = (
 
                         return res.send(JSON.stringify(result));
                     }),
-                );
+                ]);
             });
         }
     });
