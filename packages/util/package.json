@@ -1,6 +1,6 @@
 {
     "name": "@bucket-of-bolts/util",
-    "version": "1.0.14",
+    "version": "1.0.13",
     "main": "build/index.js",
     "files": [
         "build/"
