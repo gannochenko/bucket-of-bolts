@@ -1,18 +1,17 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var qs_1 = require("@m59/qs");
-exports.injectPassword = function (url, password) {
-    if (password === void 0) { password = null; }
+const qs_1 = require("@m59/qs");
+exports.injectPassword = (url, password = null) => {
     if (typeof password === 'string' && password.length) {
-        var oUrl = new URL(url);
+        const oUrl = new URL(url);
         oUrl.password = password;
         url = oUrl.toString();
     }
     return url;
 };
-exports.decomposeURL = function (url) {
-    var oUrl = new URL(url);
-    var parts = {
+exports.decomposeURL = (url) => {
+    const oUrl = new URL(url);
+    const parts = {
         host: oUrl.hostname,
         port: oUrl.port,
         password: oUrl.password,
@@ -25,10 +24,10 @@ exports.decomposeURL = function (url) {
     }
     return parts;
 };
-exports.putSearchParameters = function (url, params) {
-    return "?" + qs_1.stringify(Object.assign({}, qs_1.parse(url.replace(/^\?/, '')), params));
+exports.putSearchParameters = (url, params) => {
+    return `?${qs_1.stringify(Object.assign({}, qs_1.parse(url.replace(/^\?/, '')), params))}`;
 };
-exports.parseSearch = function (url) { return qs_1.parse(url.replace(/^\?/, '')); };
-exports.sanitize = function (str) { return str.replace(/[^a-z0-9_-]/gi, ''); };
-exports.escapeQuote = function (str) { return str.replace(/"/g, '"'); };
+exports.parseSearch = (url) => qs_1.parse(url.replace(/^\?/, ''));
+exports.sanitize = (str) => str.replace(/[^a-z0-9_-]/gi, '');
+exports.escapeQuote = (str) => str.replace(/"/g, '"');
 //# sourceMappingURL=url.js.map

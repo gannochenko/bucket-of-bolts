@@ -10,7 +10,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var palette_ = __importStar(require("./palette"));
+const palette_ = __importStar(require("./palette"));
 __export(require("./animations"));
 __export(require("./grid"));
 __export(require("./mixins-extra"));

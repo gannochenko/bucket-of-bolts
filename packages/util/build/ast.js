@@ -1,18 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getASTAt = function (ast, path) {
-    if (ast === void 0) { ast = null; }
-    if (path === void 0) { path = ''; }
+exports.getASTAt = (ast = null, path = '') => {
     if (!ast || !ast.fieldNodes || !ast.fieldNodes[0]) {
         return null;
     }
-    var node = ast.fieldNodes[0];
+    let node = ast.fieldNodes[0];
     if (path.length) {
-        var pathParts_1 = path.split('.');
-        var i_1 = 0;
-        for (; i_1 < pathParts_1.length; i_1 += 1) {
+        const pathParts = path.split('.');
+        let i = 0;
+        for (; i < pathParts.length; i += 1) {
             if (node.selectionSet && node.selectionSet.selections) {
-                var subNode = node.selectionSet.selections.find(function (childNode) { return childNode.name.value === pathParts_1[i_1]; });
+                const subNode = node.selectionSet.selections.find(childNode => childNode.name.value === pathParts[i]);
                 if (subNode) {
                     node = subNode;
                 }
@@ -24,19 +22,18 @@ exports.getASTAt = function (ast, path) {
                 break;
             }
         }
-        if (i_1 === pathParts_1.length) {
+        if (i === pathParts.length) {
             return node;
         }
         return null;
     }
     return node || null;
 };
-exports.getSelectionAt = function (ast, path) {
-    if (path === void 0) { path = ''; }
+exports.getSelectionAt = (ast, path = '') => {
     try {
-        var node = exports.getASTAt(ast, path);
+        const node = exports.getASTAt(ast, path);
         if (node) {
-            return node.selectionSet.selections.map(function (field) { return field.name.value; });
+            return node.selectionSet.selections.map(field => field.name.value);
         }
         return [];
     }

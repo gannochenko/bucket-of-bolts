@@ -3,25 +3,24 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var moment_1 = __importDefault(require("moment"));
-exports.convertLocalDateToUTC = function (date) {
+const moment_1 = __importDefault(require("moment"));
+exports.convertLocalDateToUTC = (date) => {
     return new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate(), date.getHours(), date.getMinutes(), date.getSeconds(), date.getMilliseconds()));
 };
-exports.convertUTCToDate = function (date) {
+exports.convertUTCToDate = (date) => {
     return new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(), date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds(), date.getUTCMilliseconds());
 };
-exports.getCalendar = function (date, chosen) {
-    if (chosen === void 0) { chosen = null; }
-    var b = moment_1.default.utc(date);
-    var f = moment_1.default.utc(date);
-    var cMonth = f.month();
-    var timeLine = [];
-    var isChosenMonthYear = false;
-    var chosenMonth = null;
-    var chosenYear = null;
-    var chosenDay = null;
+exports.getCalendar = (date, chosen = null) => {
+    let b = moment_1.default.utc(date);
+    let f = moment_1.default.utc(date);
+    const cMonth = f.month();
+    const timeLine = [];
+    let isChosenMonthYear = false;
+    let chosenMonth = null;
+    let chosenYear = null;
+    let chosenDay = null;
     if (chosen) {
-        var chosenDate = null;
+        let chosenDate = null;
         if (typeof chosen === 'string') {
             chosenDate = new Date(chosen);
         }
@@ -36,9 +35,9 @@ exports.getCalendar = function (date, chosen) {
                 b.month() === chosenMonth && b.year() === chosenYear;
         }
     }
-    var i = 0;
-    var pad = 1;
-    var decreasePad = false;
+    let i = 0;
+    let pad = 1;
+    let decreasePad = false;
     while (i < 50) {
         b = b.add(-1, 'day');
         if (cMonth !== b.month() && !decreasePad) {
@@ -49,7 +48,7 @@ exports.getCalendar = function (date, chosen) {
             break;
         }
         timeLine.unshift({
-            key: b.date() + "-" + b.month() + "-" + b.year(),
+            key: `${b.date()}-${b.month()}-${b.year()}`,
             weekDay: b.day(),
             day: b.date(),
             month: b.month(),
@@ -67,7 +66,7 @@ exports.getCalendar = function (date, chosen) {
     decreasePad = false;
     while (i < 50) {
         timeLine.push({
-            key: f.date() + "-" + f.month() + "-" + f.year(),
+            key: `${f.date()}-${f.month()}-${f.year()}`,
             weekDay: f.day(),
             day: f.date(),
             month: f.month(),
@@ -88,9 +87,9 @@ exports.getCalendar = function (date, chosen) {
         }
         i += 1;
     }
-    var byWeeks = [];
-    var cWeek = [];
-    timeLine.forEach(function (day) {
+    const byWeeks = [];
+    let cWeek = [];
+    timeLine.forEach(day => {
         if (day.weekDay === 1 && cWeek.length) {
             byWeeks.push(cWeek);
             cWeek = [];
@@ -101,7 +100,7 @@ exports.getCalendar = function (date, chosen) {
         byWeeks.push(cWeek);
     }
     return {
-        cMonth: cMonth,
+        cMonth,
         grid: byWeeks,
     };
 };
