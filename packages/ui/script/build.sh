@@ -5,6 +5,5 @@ BUILD_DIR=${DIR}/../build
 
 export NODE_ENV=build;
 rm -rf ${BUILD_DIR}/*;
-touch ${BUILD_DIR}/.gitkeep;
 babel ${DIR}/../src --ignore ${DIR}/../src/**/*.test.js --out-dir ${BUILD_DIR};
 
