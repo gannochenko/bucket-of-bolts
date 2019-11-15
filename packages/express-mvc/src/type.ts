@@ -15,13 +15,18 @@ export interface GenericClass {
     new (...args: any[]): {};
 }
 
-export type RuntimeParameters = any;
+interface ContextParameters {
+    req: Request;
+    res: Response;
+}
+
+export type ContextBuilder = (parameters: ContextParameters) => StringMap;
 
 export type PropertyDescriptor = TypedPropertyDescriptor<
     (params: any) => Promise<any>
 > & { initializer?: Function } & { value?: Function };
 
-export interface InputContext<RP = RuntimeParameters> {
+export interface InputContext<RP = ContextBuilder> {
     req: Request;
     res: Response;
     body: any;
@@ -33,12 +38,12 @@ export interface DTOType extends GenericClass {}
 
 export type DTOAttributeType = DTOType | 'string' | 'number' | 'boolean';
 
-export interface MethodRecordCallbackContext<RP = RuntimeParameters> {
+export interface MethodRecordCallbackContext {
     req: Request;
     res: Response;
     body: any;
     headers: IncomingHttpHeaders;
-    runtime: RP;
+    context: StringMap;
 }
 
 export interface MethodRecord extends StringMap {

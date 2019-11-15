@@ -4,7 +4,7 @@ import { getVaultFor, hasVaultFor } from './vault';
 import { getValidator, filterStructure } from './dto-compiler';
 
 import {
-    RuntimeParameters,
+    ContextBuilder,
     APIVaultRecord,
     GenericClass,
     Nullable,
@@ -20,7 +20,7 @@ export const ERROR_REQUEST = 'request';
 export const useControllers = (
     app: Express,
     controllers: GenericClass[],
-    runtimeParameters: RuntimeParameters,
+    contextBuilder?: ContextBuilder,
 ) => {
     controllers.forEach(controller => {
         if (!hasVaultFor(controller)) {
@@ -101,7 +101,10 @@ export const useControllers = (
                                 res,
                                 body: req.body,
                                 headers: req.headers,
-                                runtime: runtimeParameters,
+                                context:
+                                    typeof contextBuilder === 'function'
+                                        ? await contextBuilder({ req, res })
+                                        : {},
                             });
                         }
 
