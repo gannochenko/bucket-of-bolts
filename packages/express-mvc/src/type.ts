@@ -26,12 +26,12 @@ export type PropertyDescriptor = TypedPropertyDescriptor<
     (params: any) => Promise<any>
 > & { initializer?: Function } & { value?: Function };
 
-export interface InputContext<RP = ContextBuilder> {
+export interface InputContext<CTX = StringMap> {
     req: Request;
     res: Response;
-    body: any;
+    body?: any;
     headers: IncomingHttpHeaders;
-    runtime: RP;
+    context: CTX;
 }
 
 export interface DTOType extends GenericClass {}
