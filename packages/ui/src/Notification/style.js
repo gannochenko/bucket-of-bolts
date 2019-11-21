@@ -63,14 +63,14 @@ export const Message = styled.div`
     margin-right: 0.5rem;
     background-color: white;
     animation: ${appear} 0.25s ease;
-    ${props => (props.closable ? 'padding-right: 3rem;' : '')}
-	border: 1px solid ${props => props.theme.message.border.color};
-	border-radius: 2px;
-	position: relative;
-	box-shadow: 4px 6px 15px -4px rgba(0,0,0,0.21);
-	overflow-x: hidden;
-	padding: 0.5rem 2.5rem 0.5rem 0;
-	width: 20rem;
+    ${props => (props.closable ? 'padding-right: 3rem;' : '')};
+    border: 1px solid ${props => props.theme.message.border.color};
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 4px 6px 15px -4px rgba(0, 0, 0, 0.21);
+    overflow-x: hidden;
+    padding: 0.5rem 2.5rem 0.5rem 0;
+    width: 20rem;
 `;
 
 export const MessageWrap = styled.div`

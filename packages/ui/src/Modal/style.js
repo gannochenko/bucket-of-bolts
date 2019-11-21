@@ -42,8 +42,8 @@ const appear = keyframes`
 `;
 
 export const Overlay = styled.div`
-    ${props => align(props.central ? 'center' : 'top', 'center')}
-    ${fixedCover()}
+    ${props => align(props.central ? 'center' : 'top', 'center')};
+    ${fixedCover()};
     overflow-y: auto;
     background-color: #1b273333;
     z-index: ${props => props.theme.overlay.zIndex};
@@ -52,20 +52,20 @@ export const Overlay = styled.div`
 `;
 
 export const Panel = styled.div`
-  max-height: none;
-  background-color: white;
-  border-radius: 2px;
-  border: 1px solid #868b9940;
-  box-shadow: 0 8px 10px 0 #0000000d;
-  position: relative;
-  min-width: 10rem;
-  ${props =>
-      media(
-          { all: 'max-width: 50rem;', xs: 'max-width: none; width: 100%;' },
-          props.theme.grid,
-      )}
-  animation: ${appear} 200ms ease;
-  ${props => media({ xs: 'animation: none;' }, props.theme.grid)}
+    max-height: none;
+    background-color: white;
+    border-radius: 2px;
+    border: 1px solid #868b9940;
+    box-shadow: 0 8px 10px 0 #0000000d;
+    position: relative;
+    min-width: 10rem;
+    ${props =>
+        media(
+            { all: 'max-width: 50rem;', xs: 'max-width: none; width: 100%;' },
+            props.theme.grid,
+        )};
+    animation: ${appear} 200ms ease;
+    ${props => media({ xs: 'animation: none;' }, props.theme.grid)}
 `;
 
 export const PanelOffset = styled.div`
@@ -73,7 +73,7 @@ export const PanelOffset = styled.div`
 `;
 
 export const Cross = styled.div`
-    ${icon('close', '1rem', '0.5rem')}
+    ${icon('close', '1rem', '0.5rem')};
     position: absolute;
     top: 0;
     right: 0;

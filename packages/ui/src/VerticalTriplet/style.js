@@ -4,7 +4,7 @@ import { align } from '@bucket-of-bolts/ui';
 export const defaultTheme = {};
 
 export const VerticalTripletContainer = styled.div`
-    ${align('top', 'stretch', 'column')}
+    ${align('top', 'stretch', 'column')};
     height: 100%;
 `;
 
@@ -13,7 +13,7 @@ export const Top = styled.div`
 `;
 
 export const Middle = styled.div`
-    ${align('stretch', 'left')}
+    ${align('stretch', 'left')};
     flex-grow: 2;
 `;
 
