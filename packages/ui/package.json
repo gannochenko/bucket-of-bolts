@@ -40,7 +40,7 @@
     "peerDependencies": {
         "prop-types": "x.x",
         "react": "16.x",
-        "sc-companion": "x.x",
+        "@bucket-of-bolts/ui": "x.x",
         "styled-components": "x.x"
     },
     "husky": {

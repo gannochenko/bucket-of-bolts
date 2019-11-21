@@ -1,5 +1,5 @@
 import styled, { keyframes, css } from 'styled-components';
-import { iconLabel, icon } from 'sc-companion';
+import { iconLabel, icon } from '@bucket-of-bolts/ui';
 
 export const defaultTheme = {
     message: {

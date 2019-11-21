@@ -1,5 +1,12 @@
 import styled, { keyframes } from 'styled-components';
-import { align, fixedCover, media, icon, fgColor, group } from 'sc-companion';
+import {
+    align,
+    fixedCover,
+    media,
+    icon,
+    fgColor,
+    group,
+} from '@bucket-of-bolts/ui';
 
 export const defaultTheme = {
     grid: {
