@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { align } from '@bucket-of-bolts/ui';
+import { align } from '@bucket-of-bolts/styled-companion';
 
 export const defaultTheme = {};
 
