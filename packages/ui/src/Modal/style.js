@@ -6,7 +6,7 @@ import {
     icon,
     fgColor,
     group,
-} from '@bucket-of-bolts/ui';
+} from '@bucket-of-bolts/styled-companion';
 
 export const defaultTheme = {
     grid: {
