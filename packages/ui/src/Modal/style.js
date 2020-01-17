@@ -23,9 +23,9 @@ export const defaultTheme = {
             hover: '#000',
             hout: '#000',
         },
-        overlay: {
-            zIndex: 0,
-        },
+    },
+    overlay: {
+        zIndex: 0,
     },
 };
 

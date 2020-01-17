@@ -13,7 +13,6 @@ export const Top = styled.div`
 `;
 
 export const Middle = styled.div`
-    ${align('stretch', 'left')};
     flex-grow: 2;
 `;
 
