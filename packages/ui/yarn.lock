@@ -924,6 +924,11 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@bucket-of-bolts/styled-companion@x.x":
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/@bucket-of-bolts/styled-companion/-/styled-companion-1.0.14.tgz#9db6c866fb0fea6281b0d0f5f9367d64a5703527"
+  integrity sha512-S29y4zbJp5jndGeCWLe/03jM84o3tgmWLXa+ycXCK6LM9aHE79qlkhkLaLCnmCY6moJL82rGD/NuyM585CqXyw==
+
 "@cnakazawa/watch@^1.0.3":
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@cnakazawa/watch/-/watch-1.0.3.tgz#099139eaec7ebf07a27c1786a3ff64f39464d2ef"
@@ -4719,11 +4724,6 @@ sax@^1.2.4:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
   integrity sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==
-
-sc-companion@x.x:
-  version "2.1.7"
-  resolved "https://registry.yarnpkg.com/sc-companion/-/sc-companion-2.1.7.tgz#44672ab97517fd83079d921bedf1d7b070d1b5f7"
-  integrity sha512-8ztsTwQC1DfdCCIUrF4vAZCA/n+NwF6MLNEd3c5XgAD3UM3QDLRwqrFRV6gLW8TT58SR91Lu09G0UP8C2OXQeQ==
 
 "semver@2 || 3 || 4 || 5", semver@^5.3.0, semver@^5.4.1, semver@^5.5.0, semver@^5.5.1:
   version "5.7.0"
