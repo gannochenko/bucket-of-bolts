@@ -23,7 +23,7 @@ export class Modal extends Component {
 
         this.state = {
             open: false,
-            children: () => {},
+            children: null,
         };
     }
 
