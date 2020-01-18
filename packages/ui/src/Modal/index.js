@@ -25,6 +25,17 @@ export class Modal extends Component {
             open: false,
             children: null,
         };
+        this.panelReference = React.createRef();
+    }
+
+    componentDidMount() {
+        if (this.props.closeOnEscape) {
+            window.document.addEventListener('keydown', this.onEscapePress);
+        }
+    }
+
+    componentWillUnmount() {
+        window.document.removeEventListener('keydown', this.onEscapePress);
     }
 
     open = children => {
@@ -56,6 +67,33 @@ export class Modal extends Component {
         this.closeExternal();
     };
 
+    onOverlayClick = e => {
+        if (!this.props.closeOnOverlayClick) {
+            return;
+        }
+
+        let inside = false;
+        let next = e.target;
+        while (next) {
+            if (next === this.panelReference.current) {
+                inside = true;
+                break;
+            }
+
+            next = next.parentElement;
+        }
+
+        if (!inside) {
+            this.closeExternal();
+        }
+    };
+
+    onEscapePress = e => {
+        if (e.key === 'Escape') {
+            this.closeExternal();
+        }
+    };
+
     openConfirm = (
         question = 'A very important question',
         buttons = () => {},
@@ -84,8 +122,9 @@ export class Modal extends Component {
                 central={central}
                 onWheel={e => e.preventDefault()}
                 theme={theme}
+                onClick={this.onOverlayClick}
             >
-                <Panel theme={theme}>
+                <Panel theme={theme} ref={this.panelReference}>
                     <Cross theme={theme} onClick={this.onCloseClick} />
                     <PanelOffset theme={theme}>
                         {!!stateChildren &&
@@ -106,6 +145,8 @@ Modal.propTypes = {
     central: bool,
     theme: object,
     children: func,
+    closeOnOverlayClick: bool,
+    closeOnEscape: bool,
 };
 
 Modal.defaultProps = {
@@ -115,4 +156,6 @@ Modal.defaultProps = {
     central: false,
     theme: defaultTheme,
     children: () => {},
+    closeOnOverlayClick: false,
+    closeOnEscape: false,
 };
