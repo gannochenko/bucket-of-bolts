@@ -365,3 +365,9 @@ export const normalizeCellWidth = () => `
     min-width: 100px;
     flex-grow: 1;
 `;
+
+export const boxShadow = (type = 'usual') => {
+    return `
+     box-shadow: 2px 4px 9px 0px rgba(0,0,0,0.18);
+  `;
+};
