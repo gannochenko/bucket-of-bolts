@@ -11,7 +11,8 @@
         "test": "jest -c ./jest/config.js --passWithNoTests",
         "test:dev": "jest -c ./jest/config.js --watch",
         "lint": "eslint ./src --ext .js,.ts",
-        "lint:fix": "eslint ./src --fix --ext .js,.ts"
+        "lint:fix": "eslint ./src --fix --ext .js,.ts",
+        "release": "./script/release.sh"
     },
     "keywords": [],
     "author": "gannochenko.sv@gmail.com",
