@@ -1,5 +1,5 @@
 import React from 'react';
-import { object } from 'prop-types';
+import { object, oneOfType, arrayOf } from 'prop-types';
 
 import {
     defaultTheme,
@@ -21,12 +21,12 @@ VerticalTriplet.propTypes = {
     theme: object,
     top: object,
     bottom: object,
-    children: object,
+    children: oneOfType([object, arrayOf(object)]),
 };
 
 VerticalTriplet.defaultProps = {
     theme: defaultTheme,
     top: null,
     bottom: null,
-    children: object,
+    children: null,
 };
